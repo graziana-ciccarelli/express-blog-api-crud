@@ -3,7 +3,8 @@
 const posts = require('../data/posts'); 
 
 const index = (req, res) => {
-  res.json(posts); 
+  console.log(req);  
+  res.json(posts);   
 };
 
 
@@ -69,4 +70,3 @@ const update = (req, res) => {
 };
 
 module.exports = { index, show, destroy, store, update };
-

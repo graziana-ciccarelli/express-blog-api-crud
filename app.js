@@ -3,10 +3,15 @@
 const express = require('express');
 const app = express();
 const postsRouter = require('./routers/posts'); 
+const cors = require('cors');
 app.use(express.json());
 
 
 app.use('/api/posts', postsRouter);
+
+app.use(cors({
+  origin: 'http://localhost:5173'
+}));
 
 app.use((req, res) => {
   res.status(404).json({ message: "Rotta non trovata" });
